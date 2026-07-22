@@ -1,0 +1,3 @@
+import { useState } from 'react'
+const nav=['Home','About',"Owner's Message",'Facilities','Evening Academy','Admissions','Gallery','Contact']
+export default function Navbar(){const [open,setOpen]=useState(false);return <header className="header"><nav className="nav container"><a className="brand" href="#home"><b className="crest">LF</b><span>Little Friends Secondary School<small>Zainab Campus</small></span></a><button className="menu" onClick={()=>setOpen(!open)} aria-label="Toggle menu">☰</button><ul className={`links ${open?'open':''}`}>{nav.map(x=><li key={x}><a onClick={()=>setOpen(false)} href={'#'+(x==='Home'?'home':x.toLowerCase().replaceAll(' ','-').replace("'",''))}>{x}</a></li>)}</ul></nav></header>}
